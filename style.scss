@@ -1,0 +1,133 @@
+$close_image_color: rgba(9, 8, 8, 0.333);
+$close_image_color_hover: rgba(9, 8, 8, 0.766);
+$link_color: rgb(212, 248, 197);
+$image_footer_background: rgba(6, 6, 6, 0.794);
+$fw_700: 700;
+$fs_default: 0.875rem;
+$ff_primary: 'Red Hat Text', sans-serif;
+*,
+*::before,
+*::after{
+  font-family: $ff_primary;
+  font-weight: $fw_700;
+  font-size: $fs_default;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+html{
+    font-size: 24px;
+}
+body{
+    width: 100vw;
+    background-image: url(./img/delicious-american-beer-arrangement.jpg);
+    background-size: contain ;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    height: 5vh;
+    padding-bottom: 1vh;
+}
+#LandingHero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 94vh;
+}
+#Gallery{
+    display: grid;
+    padding: 1em;
+    grid-template-columns: repeat(8,1fr);
+    grid-auto-rows: auto;
+    gap: .4em;
+
+    .gallery_item{
+        border: 2px solid rgb(80, 41, 2);
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.gallery_lightboxes{
+    .gallery_lightbox:target{
+       transform: scale(1, 1);
+    }
+    .gallery_lightbox{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0, 0);
+        transition: transform ease-in 100ms;
+        .gallery_lightbox_content{
+            width: 75%;
+            height: 75%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .close_lightbox{
+                position: absolute;
+                width: 2em;
+                height: 2em;
+                transform: scale(1);
+                transition: transform ease-in-out 50ms;
+                background: $close_image_color;
+                top: -1em;
+                right: -1em;
+                border-radius: 50%;
+                text-decoration: none;
+                color: white;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .close_lightbox:hover{
+                background: $close_image_color_hover;
+                transform: scale(1.2);
+            }
+        }
+        footer{
+            font-size: .6em;
+            background-color: $image_footer_background;
+            a{
+                font-size: inherit;
+                text-decoration: none;
+                color: $link_color;
+            }
+        }
+    }
+}
+.hidden{
+    display: none;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.wide_image{
+    grid-column: span 2 / auto;
+}
+.tall_image{
+    grid-row: span 2 / auto;
+}
+.huge_image{
+    grid-column: span 3 / auto;
+    grid-row: span 3 / auto;
+}

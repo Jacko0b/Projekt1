@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 24px;
+}
+
+body {
+  width: 100vw;
+  background-image: url(./img/delicious-american-beer-arrangement.jpg);
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  height: 5vh;
+  padding-bottom: 1vh;
+}
+
+#LandingHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 94vh;
+}
+
+#Gallery {
+  display: grid;
+  padding: 1em;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: auto;
+  gap: 0.4em;
+}
+#Gallery .gallery_item {
+  border: 2px solid rgb(80, 41, 2);
+}
+#Gallery img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery_lightboxes .gallery_lightbox:target {
+  transform: scale(1, 1);
+}
+.gallery_lightboxes .gallery_lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0, 0);
+  transition: transform ease-in 100ms;
+}
+.gallery_lightboxes .gallery_lightbox .gallery_lightbox_content {
+  width: 75%;
+  height: 75%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.gallery_lightboxes .gallery_lightbox .gallery_lightbox_content .close_lightbox {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  transform: scale(1);
+  transition: transform ease-in-out 50ms;
+  background: rgba(9, 8, 8, 0.333);
+  top: -1em;
+  right: -1em;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery_lightboxes .gallery_lightbox .gallery_lightbox_content .close_lightbox:hover {
+  background: rgba(9, 8, 8, 0.766);
+  transform: scale(1.2);
+}
+.gallery_lightboxes .gallery_lightbox footer {
+  font-size: 0.6em;
+  background-color: rgba(6, 6, 6, 0.794);
+}
+.gallery_lightboxes .gallery_lightbox footer a {
+  font-size: inherit;
+  text-decoration: none;
+  color: rgb(212, 248, 197);
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.wide_image {
+  grid-column: span 2/auto;
+}
+
+.tall_image {
+  grid-row: span 2/auto;
+}
+
+.huge_image {
+  grid-column: span 3/auto;
+  grid-row: span 3/auto;
+}/*# sourceMappingURL=style.css.map */
