@@ -9,6 +9,7 @@ $link_color: rgb(147, 102, 57);
 $fc: rgb(194, 197, 170);
 $fw_700: 700;
 $fs_default: 1rem;
+$dropdown_time: 0.45s;
 *,
 *::before,
 *::after{
@@ -31,36 +32,20 @@ a{
 }
 nav{
     width: 100vw;
-}
-@keyframes flip {
-    from {
-            transform: rotateY(0);
-         }
-    to   {
-            transform: rotateY(360deg);
-         }
- }
-
-.homeBtn a svg{
-    padding: 0;
-    width: 3em;
-    height: 3em;
-}
-.homeBtn a svg:hover{
-    animation: flip 2s infinite;
-}
-.homeBtn a:hover{
     background-color: $header_background;
 }
 ul{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 50%;
     list-style: none;
-    background-color: $header_background;
     li{
         display: inline-block;
         position: relative;
         a{
             display: block;
-            padding: 1em 1.2em;
+            padding: 1em 2em;
             text-align: center;
             font-size: 1.2em;
             color: $fc;
@@ -68,7 +53,20 @@ ul{
         a:hover{
             background-color: $header_background_hover;
         }
-        
+        .exploreBtnAnchor::after {
+            display: inline-flex;
+            content: "";
+            background-image: url("./img/down-icon.svg");
+            background-size: 1em 1em;
+            background-repeat: no-repeat;
+            width: 1em;
+            height: 1em;
+            margin-left: .4em;
+            transition: transform $dropdown_time ease-out;
+        }
+        .exploreBtnAnchor:hover::after{
+            transform: rotateX(180deg);
+        }
         .dropdown{
             width: 100%;
             background-color: $header_background;
@@ -90,8 +88,31 @@ ul{
     }
     li:hover .dropdown{
         display: block;
-        animation: list .4s;
+        animation: list $dropdown_time;
     }
+
+    .homeBtn {
+        a{padding: .5em;}
+        a svg{
+            padding: 0;
+            width: 3.5em;
+            height: 3.5em;
+        }
+        @keyframes flip {
+            from {
+                    transform: rotateY(0);
+                 }
+            to   {
+                    transform: rotateY(360deg);
+                 }
+        }
+        a:hover{
+            background-color: $header_background;
+            animation: flip 2s infinite;
+        }
+    }
+    
+    
 }
 body{
     background: 

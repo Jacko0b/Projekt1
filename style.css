@@ -22,33 +22,15 @@ a {
 
 nav {
   width: 100vw;
-}
-
-@keyframes flip {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-.homeBtn a svg {
-  padding: 0;
-  width: 3em;
-  height: 3em;
-}
-
-.homeBtn a svg:hover {
-  animation: flip 2s infinite;
-}
-
-.homeBtn a:hover {
   background-color: rgb(127, 79, 36);
 }
 
 ul {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 50%;
   list-style: none;
-  background-color: rgb(127, 79, 36);
 }
 ul li {
   display: inline-block;
@@ -56,13 +38,27 @@ ul li {
 }
 ul li a {
   display: block;
-  padding: 1em 1.2em;
+  padding: 1em 2em;
   text-align: center;
   font-size: 1.2em;
   color: rgb(194, 197, 170);
 }
 ul li a:hover {
   background-color: rgb(88, 47, 14);
+}
+ul li .exploreBtnAnchor::after {
+  display: inline-flex;
+  content: "";
+  background-image: url("./img/down-icon.svg");
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.4em;
+  transition: transform 0.45s ease-out;
+}
+ul li .exploreBtnAnchor:hover::after {
+  transform: rotateX(180deg);
 }
 ul li .dropdown {
   width: 100%;
@@ -84,7 +80,27 @@ ul li .dropdown li {
 }
 ul li:hover .dropdown {
   display: block;
-  animation: list 0.4s;
+  animation: list 0.45s;
+}
+ul .homeBtn a {
+  padding: 0.5em;
+}
+ul .homeBtn a svg {
+  padding: 0;
+  width: 3.5em;
+  height: 3.5em;
+}
+@keyframes flip {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+ul .homeBtn a:hover {
+  background-color: rgb(127, 79, 36);
+  animation: flip 2s infinite;
 }
 
 body {
