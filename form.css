@@ -52,6 +52,12 @@ form .btns #Submitbtn {
   background-color: rgb(67, 198, 74);
 }
 
+.radio {
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
+}
+
 footer {
   margin-top: 7vh;
 }/*# sourceMappingURL=form.css.map */
