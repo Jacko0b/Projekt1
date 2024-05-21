@@ -53,6 +53,7 @@ main #ExploreHero {
 }
 
 .kind {
+  margin-top: 6vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
