@@ -102,6 +102,55 @@
             <li><a  href="./form.html">Kontakt</a></li>
         </ul>
     </nav>
+    <main>
+        <h1>Ankieta - Piwo Kraftowe</h1>
+        <form action="" method="">
+            <label for="beer_name">Nazwa piwa:</label>
+            <input type="text" id="beer_name" name="beer_name"><br><br>
+
+            <label for="brewery">Browar:</label>
+            <input type="text" id="brewery" name="brewery"><br><br>
+
+            <label for="style">Styl piwa:</label>
+            <input type="text" id="style" name="style"><br><br>
+
+            <label for="abv">Zawartość alkoholu (%):</label>
+            <input type="number" id="abv" name="abv"><br><br>
+
+            <label for="ibu">IBU (International Bitterness Units):</label>
+            <input type="number" id="ibu" name="ibu"><br><br>
+
+            <label for="country">Kraj pochodzenia:</label>
+            <select id="country" name="country">
+                <option value="poland">Polska</option>
+                <option value="usa">USA</option>
+                <option value="germany">Niemcy</option>
+                <option value="belgium">Belgia</option>
+                <option value="uk">Wielka Brytania</option>
+            </select><br><br>
+
+            <label>Ocena piwa:</label><br>
+            <input class="radio" type="radio" id="rating_excellent" name="rating" value="excellent">
+            <label for="rating_excellent">Doskonałe</label><br>
+            <input class="radio" type="radio" id="rating_good" name="rating" value="good">
+            <label for="rating_good">Dobre</label><br>
+            <input class="radio" type="radio" id="rating_average" name="rating" value="average">
+            <label for="rating_average">Przeciętne</label><br>
+            <input class="radio" type="radio" id="rating_poor" name="rating" value="poor">
+            <label for="rating_poor">Słabe</label><br><br>
+
+            <div class="textarea">
+                <label for="comments">Dodatkowe uwagi:</label>
+                <textarea id="comments" name="comments"></textarea><br><br>
+            </div>
+            
+            <div class="btns">
+                <input id="Submitbtn" class="btn" type="submit" value="Wyślij">
+                <input class="btn" type="reset" value="Wyczyść">
+            
+            </div>
+            </form>
+    </main>
     <footer>
         <p>Projekt wykonany na zajęcia z Hipertekstu i Hipermediów przez <a href="https://github.com/Jacko0b">Jakuba Sobotę</a></p>
     </footer>
